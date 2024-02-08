@@ -1,0 +1,25 @@
+@use "../abstract/" as *;
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: $clr-neutral-200;
+  font-family: $ff-primary;
+}
+
+input,
+button,
+label {
+  font-family: $ff-primary;
+}
+
+main {
+  width: min(90%, toRem(840));
+  border-radius: 1rem 1rem toRem(180) 1rem;
+  height: min-content;
+  padding: toRem(60) toRem(54) toRem(55) toRem(54);
+  background-color: $clr-neutral-100;
+}

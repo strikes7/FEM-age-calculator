@@ -1,0 +1,18 @@
+@use "../abstract/" as *;
+
+.age-result {
+  margin-block-start: 2.75rem;
+
+  & > p {
+    line-height: 1.1;
+    color: $clr-neutral-500;
+    font-size: $fs-800;
+    font-weight: 800;
+    font-style: italic;
+    margin: 0;
+  }
+
+  &__number {
+    color: $clr-purple;
+  }
+}

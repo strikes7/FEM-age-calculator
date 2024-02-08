@@ -1,0 +1,91 @@
+@use "../abstract/" as *;
+
+.age-calculator {
+  --error-visibility: 0fr;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  grid-template-rows: min-content var(--error-visibility) min-content;
+  grid-column-gap: 2rem;
+  padding-block-end: toRem(45);
+  border-block-end: 2px solid $clr-neutral-200;
+  transition: grid-template-rows 0.2s ease-in-out;
+
+  & > label {
+    order: 1;
+    margin-inline-start: 0.1rem;
+    margin-block-end: 0.3rem;
+    font-size: $fs-300;
+    font-weight: 700;
+    letter-spacing: 0.15rem;
+    color: $clr-neutral-400;
+
+    &[data-is-valid="false"] {
+      color: $clr-red;
+    }
+  }
+
+  & > input {
+    display: block;
+    width: toRem(156);
+    line-height: 1;
+    box-sizing: border-box;
+    padding: 0.55rem 1.3rem;
+    order: 2;
+    font-size: $fs-600;
+    font-weight: 700;
+    color: $clr-neutral-500;
+    border: 1px solid $clr-neutral-300;
+    border-radius: 0.5rem;
+
+    &[data-is-valid="false"] {
+      border-color: $clr-red;
+    }
+  }
+}
+.error-container {
+  overflow: hidden;
+  order: 3;
+  & > p {
+    margin-block: 0.35rem 0;
+    margin-inline-start: 0.1rem;
+
+    font-size: $fs-300;
+    color: $clr-red;
+    font-style: italic;
+    transition: color 0.2s ease-in-out;
+
+    &[aria-hidden="true"] {
+      --error-visibility: 0fr;
+      color: transparent;
+    }
+
+    &[aria-hidden="false"] {
+      color: $clr-red;
+      --error-visibility: 1fr;
+    }
+  }
+}
+
+#age-calculator__calculate {
+  width: toRem(95);
+  height: toRem(95);
+  position: absolute;
+  border-width: 0;
+  border-radius: 100%;
+  inset-block-end: calc(0% - toRem(95) / 2);
+  inset-inline-end: 0;
+  background-color: $clr-purple;
+  background-image: url("../images/icon-arrow.svg");
+  background-size: auto toRem(44);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  color: transparent;
+  transition: background-color 0.15s ease-in-out;
+
+  &:hover,
+  &:focus {
+    background-color: $clr-neutral-500;
+  }
+}

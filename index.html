@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="assets/css/mobile-style.css"
+      media="screen and (max-width: 60em)"
+    />
+    <title>Age calculator app</title>
+  </head>
+  <body>
+    <main>
+      <form action="" class="age-calculator">
+        <label for="age-calculator__day">DAY</label>
+        <input
+          type="number"
+          min="1"
+          max="31"
+          name="day"
+          id="age-calculator__day"
+          placeholder="DD"
+          aria-errormessage="age-calculator__day__error"
+        />
+        <div class="error-container">
+          <p id="age-calculator__day__error" aria-hidden="true">
+            Must be a valid day
+          </p>
+        </div>
+
+        <label for="age-calculator__month">MONTH</label>
+        <input
+          type="number"
+          min="1"
+          max="12"
+          name="month"
+          id="age-calculator__month"
+          placeholder="MM"
+          aria-errormessage="age-calculator__month__error"
+        />
+        <div class="error-container">
+          <p id="age-calculator__month__error" aria-hidden="true">
+            Must be a valid month
+          </p>
+        </div>
+
+        <label for="age-calculator__year">YEAR</label>
+        <input
+          type="number"
+          min="0"
+          name="year"
+          id="age-calculator__year"
+          placeholder="YYYY"
+          aria-errormessage="age-calculator__year__error"
+        />
+        <div class="error-container">
+          <p id="age-calculator__year__error" aria-hidden="true">
+            Must be in the past
+          </p>
+        </div>
+
+        <button type="button" id="age-calculator__calculate">calcular</button>
+      </form>
+      <div class="age-result">
+        <p>
+          <span id="age-result__year" class="age-result__number">--</span> years
+        </p>
+        <p>
+          <span id="age-result__month" class="age-result__number">--</span>
+          months
+        </p>
+        <p>
+          <span id="age-result__day" class="age-result__number">--</span> days
+        </p>
+      </div>
+    </main>
+  </body>
+  <script src="assets/js/script.js"></script>
+</html>

@@ -1,0 +1,31 @@
+{
+    "name": "skeleton-front-end-web-dev",
+    "version": "0.0.2",
+    "description": "skeleton to start a web dev project",
+    "main": "index.js"
+    ,
+    "scripts": {
+        "copy:js": "copyfiles --up 1 src/assets/js/**/*.js .",
+        "copy:fonts": "copyfiles --up 1 src/assets/fonts/**/*.woff2 .",
+        "copy:images": "copyfiles --up 1 src/assets/images/**/*.{png,jpg,jpge,svg} .",
+        "copy:sass": "sass --no-source-map src/assets/sass:assets/css",
+        "copy:html": "copyfiles --up 1 src/**/*.html .",
+        "watch:js": "onchange src/assets/js/**/*.js -- npm run copy:js",
+        "watch:fonts": "onchange src/assets/fonts/**/*.woff2 -- npm run copy:fonts",
+        "watch:images": "onchange src/assets/images/**/*.{png,jpg,jpge,svg} -- npm run copy:images",
+        "watch:sass": "sass --watch --no-source-map src/assets/sass:assets/css",
+        "watch:html": "onchange src/**/*.html -- npm run copy:html",
+        "server": "browser-sync start  -s '.' -f '.' --no-open --reload-delay 50 --no-ui --no-inject-changes",
+        "start": "npm-run-all --parallel server watch:* ",
+        "build": "npm-run-all --parallel copy:*"
+    },
+    "author": "maragmat",
+    "license": "ISC",
+    "devDependencies": {
+        "browser-sync": "^2.29.3",
+        "copyfiles": "^2.4.1",
+        "npm-run-all": "^4.1.5",
+        "onchange": "^7.1.0",
+        "sass": "^1.64.2"
+    }
+}
